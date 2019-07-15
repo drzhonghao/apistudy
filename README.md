@@ -8,6 +8,8 @@ Programmers often refer to code search engines to retrieves samples of APIs, and
 
 ## Evaluation
 
+In our evaluation, we use CodeSyner to synthesize samples from the API code of five libraries: 
+[accumulo](https://accumulo.apache.org/), [cassandra]( https://cassandra.apache.org/), karaf(https://karaf.apache.org/), lucene(https://lucene.apache.org/), and poi(https://poi.apache.org/).
 
 
 ## Tool
