@@ -1,0 +1,63 @@
+import org.apache.lucene.search.Explanation;
+import org.apache.lucene.search.*;
+
+
+
+import java.io.IOException;
+import java.util.Set;
+
+import org.apache.lucene.index.LeafReaderContext;
+import org.apache.lucene.index.Term;
+
+/**
+ * A Weight that has a constant score equal to the boost of the wrapped query.
+ * This is typically useful when building queries which do not produce
+ * meaningful scores and are mostly useful for filtering.
+ *
+ * @lucene.internal
+ */
+public abstract class ConstantScoreWeight extends Weight {
+
+  private final float score;
+
+  protected ConstantScoreWeight(Query query, float score) {
+    super(query);
+    this.score = score;
+  }
+
+  @Override
+  public void extractTerms(Set<Term> terms) {
+    // most constant-score queries don't wrap index terms
+    // eg. geo filters, doc values queries, ...
+    // override if your constant-score query does wrap terms
+  }
+
+  /** Return the score produced by this {@link Weight}. */
+  protected final float score() {
+    return score;
+  }
+
+  @Override
+  public Explanation explain(LeafReaderContext context, int doc) throws IOException {
+    final Scorer s = scorer(context);
+    final boolean exists;
+    if (s == null) {
+      exists = false;
+    } else {
+      final TwoPhaseIterator twoPhase = s.twoPhaseIterator();
+      if (twoPhase == null) {
+        exists = s.iterator().advance(doc) == doc;
+      } else {
+        exists = twoPhase.approximation().advance(doc) == doc && twoPhase.matches();
+      }
+    }
+
+    if (exists) {
+      return Explanation.match(
+          score, getQuery().toString() + (score == 1f ? "" : "^" + score));
+    } else {
+      return Explanation.noMatch(getQuery().toString() + " doesn't match id " + doc);
+    }
+  }
+
+}
