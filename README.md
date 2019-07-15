@@ -13,7 +13,7 @@ In our evaluation, we use CodeSyner to synthesize samples from the API code of f
 
 Our synthesized samples are under their folders.
 
-We compared our results with the state-of-the-art code search engine, [Search](Codehttps://searchcode.com)
+We compared our results with the state-of-the-art code search engine, [SearchCode](https://searchcode.com)
 
 ## Tool
 
