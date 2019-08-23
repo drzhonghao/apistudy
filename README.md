@@ -1,4 +1,4 @@
-# Synthesizing Code Sample for New API
+# Synthesizing Samples for New and Less Popular API Classes
 
 ## Project summary
 
