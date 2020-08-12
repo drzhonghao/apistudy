@@ -19,6 +19,15 @@ We require that each synthesized code sample of our tool shall have no compilati
 Our synthesized samples are under their corresponding folders. Please note that although each file has no compilation errors, compiling all of them together can have compilation errors. These errors are not caused by internal usages, but the ambigious code names across files. These errors shall not pose any barriers to learn API usages, in that each file has no compilation errors. 
 
 
+## Comparison
+
+We constructed 20 [programming tasks](https://github.com/tohidemyname/newapi/blob/master/task.poi.rar). The gold standard of the tasks is listed [here](https://github.com/tohidemyname/newapi/blob/master/task.poi.gold.rar). 
+
+The results of the study are listed in [1](https://github.com/tohidemyname/newapi/blob/master/task.poi.1.rar), [2](https://github.com/tohidemyname/newapi/blob/master/task.poi.2.rar), [3](https://github.com/tohidemyname/newapi/blob/master/task.poi.3.rar), and [4](https://github.com/tohidemyname/newapi/blob/master/task.poi.4.rar).
+
+As github does not allow to update a file whose size is too large, we have to remove the depenencies under the lib directary. 
+
+
 ## Tool
 
 Due to the consideration of the anonymous review process, we choose to release the source files, after the paper is accepted.  
