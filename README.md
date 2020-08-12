@@ -21,11 +21,9 @@ Our synthesized samples are under their corresponding folders. Please note that 
 
 ## Comparison
 
-We constructed 20 [programming tasks](https://github.com/tohidemyname/newapi/blob/master/task.poi.rar). The gold standard of the tasks is listed [here](https://github.com/tohidemyname/newapi/blob/master/task.poi.gold.rar). 
+We constructed 20 programming tasks, and prepared their gold standard. 
 
-The results of the study are listed in [1](https://github.com/tohidemyname/newapi/blob/master/task.poi.1.rar), [2](https://github.com/tohidemyname/newapi/blob/master/task.poi.2.rar), [3](https://github.com/tohidemyname/newapi/blob/master/task.poi.3.rar), and [4](https://github.com/tohidemyname/newapi/blob/master/task.poi.4.rar).
-
-As github does not allow to update a file whose size is too large, we have to remove the depenencies under the lib directary. 
+All the completed tasks can be downloaded from [figshare](https://figshare.com/articles/dataset/Tasks_items/12793475).
 
 
 ## Tool
