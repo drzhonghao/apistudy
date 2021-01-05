@@ -21,7 +21,7 @@ We require that each synthesized code sample of our tool shall have no compilati
 The samples from our tool are under their corresponding folders. Please note that although each file has no compilation errors, compiling all of them together can have compilation errors. These errors are not caused by internal usages, but the ambigious code names across files. These errors shall not pose any barriers to learn API usages, in that each file has no compilation errors. 
 
 
-## Assisting programming tasks
+## The programming tasks and our comparison results
 
 We constructed 20 programming tasks, and prepared their gold standard. We invite four students to attack the tasks under two treatments: using SearchCode and using CodeSyner. 
 
