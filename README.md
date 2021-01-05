@@ -1,15 +1,14 @@
-# Synthesizing Samples for New and Less Popular APIs
+# An Empirical Study on API Usages inside Libraries
 
 ## Project summary
 
 
-Programmers often refer to code search engines to retrieves samples of APIs. The state-of-the-art code search engines are built upon huge repositories. For example, a code search engine, SearchCode, has a repository of more than 20 billion lines of code. Although these engines are quite useful, when programmers search for less popular APIs or new APIs, they often cannot retrieve useful samples from code search engines. Indeed, our empirical study shows that even if its repository has 20 billion lines of code, SearchCode typically retrieves uptodate samples for only about 10% API classes. 
+Programmers often learn APIs from code samples. The state-of-the-art code search engines are built upon huge repositories, and can retrieve many clients, given an API name as its input. In the literature, researchers have conduct various empirical studies on API usages, and as an important source, all the studies analyzed API usages in clients. Although these studies present useful findings, their conclusions are partial, because there are other sources for API usages. For example, libray code itself can contain many API usages. The prior studies do not analyze library code, because it contains internal usages. If researchers cannot remove such internal usages, their conclusions will be polluted. As a result, many questions on API usages are still partially answered and the questions on API usages inside libraries are all open. For example, how many API usages are there inside libraries? What are the differences of API usages between client code and library code? The answers to these questions are useful in various applications. For example, when programmers search for less popular APIs or new APIs, they often cannot retrieve useful samples from code search engines. Our answers are useful to find more API usages. 
+
+To support our study, we implement a tool to incrementally and systematically remove internal usages. With its support, we conduct the first empirical study on API usages inside libraries. Taking a popular code search (SearchCode) as a baseline, we compare API usages in client code with those in library code from various perspectives. 
 
 
-In this project, instead of searching from more projects, we propose the first approach, called CodeSyner, that synthesizes the samples of an API library from the source files of the library. Comparing with samples from client code, library code can contain internal usages, which introduce compilation errors if such usages appear in client code. The basic idea of CodeSyner is to remove such internal usages incrementally and symmetrically. To achieve this goal, CodeSyner implements a set of operators to modify code, and guides the process with the genetic algorithm. The current implement can synthesize samples from Java libraries.
-
-
-## Comparison with SearchCode
+## Samples from SearchCode and our tool
 
 In our comparison, we selected five libraries: 
 [accumulo](https://accumulo.apache.org), [cassandra](https://cassandra.apache.org), [karaf](https://karaf.apache.org), [lucene](https://lucene.apache.org), and [poi](https://poi.apache.org).
@@ -19,7 +18,7 @@ The API documents of the above libraries are hosted: [accumulo](https://tinyurl.
 We used [SearchCode](https://searchcode.com) and our tool to retrieve code samples for the API classes which are defined in the above API documents. 
 We require that each synthesized code sample of our tool shall have no compilation errors. We require that each code sample of SearchCode shall call the latest APIs that are defined in the above documents. 
 
-Our synthesized samples are under their corresponding folders. Please note that although each file has no compilation errors, compiling all of them together can have compilation errors. These errors are not caused by internal usages, but the ambigious code names across files. These errors shall not pose any barriers to learn API usages, in that each file has no compilation errors. 
+The samples from our tool are under their corresponding folders. Please note that although each file has no compilation errors, compiling all of them together can have compilation errors. These errors are not caused by internal usages, but the ambigious code names across files. These errors shall not pose any barriers to learn API usages, in that each file has no compilation errors. 
 
 
 ## Assisting programming tasks
@@ -29,7 +28,5 @@ We constructed 20 programming tasks, and prepared their gold standard. We invite
 The empty tasks, the golden standards, and all the results of the students can be downloaded from [figshare](https://figshare.com/s/085b5ad9c6ac930b45ce).
 
 
-## Tool
 
-Due to the consideration of the anonymous review process, we choose to release the source files, after the paper is accepted.  
 
