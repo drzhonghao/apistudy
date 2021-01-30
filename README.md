@@ -1,4 +1,4 @@
-# An Empirical Study on API Usages inside Libraries
+# Should we extract API usage examples from client or library? : Benefits and challenges
 
 ## Project summary
 
