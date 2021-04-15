@@ -1,4 +1,4 @@
-# Should we extract API usage examples from client or library? : Benefits and challenges
+# Should we extract API usage examples from client or library? : An empirical study
 
 ## Project summary
 
