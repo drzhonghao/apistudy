@@ -1,4 +1,4 @@
-# Should we extract API usage examples from client or library? : An empirical study
+# API Usages from Internet and Local Library: An Empirical Study
 
 ## Project summary
 
@@ -8,18 +8,18 @@ Programmers often learn APIs from code samples. The state-of-the-art code search
 To support our study, we implement a tool to incrementally and systematically remove internal usages. With its support, we conduct the first empirical study on API usages inside libraries. Taking a popular code search (SearchCode) as a baseline, we compare API usages in client code with those in library code from various perspectives. 
 
 
-## Samples from client code and library code
+## Samples from Internet and local libraries
 
 In our comparison, we selected five libraries: 
 [accumulo](https://accumulo.apache.org), [cassandra](https://cassandra.apache.org), [karaf](https://karaf.apache.org), [lucene](https://lucene.apache.org), and [poi](https://poi.apache.org).
 
 The API documents of the above libraries are hosted: [accumulo](https://tinyurl.com/wrxtcag), [cassandra](https://tinyurl.com/s48gayr), [karaf](https://tinyurl.com/yb23bygh), [lucene](https://tinyurl.com/r65nw7q), and [poi](https://tinyurl.com/uzgdlyr).
 
-### Client code
+### Internet code search
 We used [SearchCode](https://searchcode.com) and our tool to retrieve code samples for the API classes which are defined in the above API documents. 
 We require that each synthesized code sample of our tool shall have no compilation errors. We require that each code sample of SearchCode shall call the latest APIs that are defined in the above documents. 
 
-### Library code
+### Local library 
 The samples from our tool are under their corresponding folders. Please note that although each file has no compilation errors, compiling all of them together can have compilation errors. These errors are not caused by internal usages, but the ambigious code names across files. These errors shall not pose any barriers to learn API usages, in that each file has no compilation errors. 
 
 
