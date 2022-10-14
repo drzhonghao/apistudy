@@ -15,7 +15,7 @@ To support our study, we implement a tool that retrieves Internet code from a co
 In our comparison, we selected five libraries: 
 [accumulo](https://accumulo.apache.org), [cassandra](https://cassandra.apache.org), [karaf](https://karaf.apache.org), [lucene](https://lucene.apache.org), and [poi](https://poi.apache.org).
 
-The API documents of the above libraries are hosted: [accumulo](https://tinyurl.com/wrxtcag), [cassandra](https://tinyurl.com/s48gayr), [karaf](https://tinyurl.com/yb23bygh), [lucene](https://tinyurl.com/r65nw7q), and [poi](https://tinyurl.com/uzgdlyr).
+The API documents of the above libraries are hosted: [accumulo](https://drzhonghao.github.io/accumulodoc/), [cassandra](https://drzhonghao.github.io/cassandradoc/), [karaf](https://drzhonghao.github.io/karafdoc/), [lucene](https://drzhonghao.github.io/lucenedoc/), and [poi](https://drzhonghao.github.io/poidoc/).
 
 ### Internet code search
 We used [SearchCode](https://searchcode.com) and our tool to retrieve code samples for the API classes which are defined in the above API documents. 
